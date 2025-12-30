@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layermate - AIとの会話でFigmaに直接生成</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <img src="Assets/Logo_Color.png" alt="Layermate" class="logo-img">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#features" class="nav-link">機能</a></li>
+                <li><a href="#reviews" class="nav-link">ユーザーの声</a></li>
+                <li><a href="#faq" class="nav-link">よくある質問</a></li>
+                <li><a href="#events" class="nav-link">イベント</a></li>
+                <li><a href="#blog" class="nav-link">ブログ</a></li>
+                <li><a href="#pricing" class="nav-link">料金プラン</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="lang-selector">
+                    <span class="lang-option">EN</span>
+                    <span class="lang-option active">JP</span>
+                </div>
+                <a href="#" class="btn btn-signin">サインイン</a>
+                <a href="#" class="btn btn-primary">Figmaで試す</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content container">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-line1">AIとの会話で</span><br>
+                    <span class="hero-title-line2">Figmaに直接生成</span>
+                </h1>
+                <p class="hero-description">
+                    会話するだけでFigmaのデザインが完成。<br>
+                    画像やPDF、既存のレイヤーを参考に、<br>
+                    アイデアを瞬時にカタチにできます。
+                </p>
+            </div>
+            <a href="#" class="btn btn-primary btn-large">Figmaで試す</a>
+        </div>
+    </section>
+
+    <!-- Feature紹介セクション -->
+    <section class="feature-intro section">
+        <div class="container">
+            <div class="section-label">
+                <span class="diamond-icon">◆</span>
+                <span>Feature</span>
+            </div>
+            <h2 class="section-title">AIでデザイン作成をスピードアップ</h2>
+            <p class="section-description">
+                Layermateは、会話するだけでアイデアをFigmaのデザインに変換。AIが美しいインターフェースの作成をサポートします。
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature 01 -->
+    <section id="features" class="feature-01 section">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <div class="section-label">
+                        <span class="diamond-icon">◆</span>
+                        <span>Feature 01</span>
+                    </div>
+                    <h2 class="feature-title">会話でデザインを作成</h2>
+                    <p class="feature-description">
+                        作りたいものをLayermateに話しかけるだけ。イメージが曖昧でも大丈夫。あなたの言葉がそのままデザインになります。
+                    </p>
+                </div>
+                <div class="feature-visual">
+                    <img src="Assets/Feature_01.png" alt="Feature 01" class="feature-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 02 -->
+    <section class="feature-02 section">
+        <div class="container">
+            <div class="feature-content reverse">
+                <div class="feature-visual">
+                    <img src="Assets/Feature_02.png" alt="Feature 02" class="feature-image">
+                </div>
+                <div class="feature-text">
+                    <div class="section-label">
+                        <span class="diamond-icon">◆</span>
+                        <span>Feature 02</span>
+                    </div>
+                    <h2 class="feature-title">既存デザインを参考に作成</h2>
+                    <p class="feature-description">
+                        Figmaのレイヤーを選択して参考にできます。AIがデザインのスタイルを理解して、統一感のある新しい要素を作成します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 03 -->
+    <section class="feature-03 section">
+        <div class="container">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <div class="section-label">
+                        <span class="diamond-icon">◆</span>
+                        <span>Feature 03</span>
+                    </div>
+                    <h2 class="feature-title">Figmaで<br>そのまま編集可能</h2>
+                    <p class="feature-description">
+                        生成されたデザインは全てFigmaのレイヤーとして配置。<br>すぐに編集・調整できます。
+                    </p>
+                </div>
+                <div class="feature-visual">
+                    <img src="Assets/Feature_03.png" alt="Feature 03" class="feature-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Features -->
+    <section class="more-features section">
+        <div class="container">
+            <div class="section-label">
+                <span class="diamond-icon">◆</span>
+                <span>More</span>
+            </div>
+            <h2 class="section-title">その他の機能</h2>
+            <div class="more-features-grid">
+                <div class="more-feature-card">
+                    <h3 class="more-feature-title">最適なアイコンを自動選択</h3>
+                    <p class="more-feature-description">
+                        数百種類の高品質アイコンから、デザインに最適なものをAIが自動で選んで配置します。
+                    </p>
+                    <div class="more-feature-image">
+                        <img src="Assets/More_01.png" alt="More Feature 01" class="more-image">
+                    </div>
+                </div>
+                <div class="more-feature-card">
+                    <div class="coming-soon-badge">Coming Soon</div>
+                    <h3 class="more-feature-title">適切な画像を自動配置</h3>
+                    <p class="more-feature-description">
+                        デザインに合った画像を自動で選択・配置。最初から完成度の高いモックアップが作れます。
+                    </p>
+                    <div class="more-feature-image">
+                        <img src="Assets/More_02.png" alt="More Feature 02" class="more-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ユーザーの声 -->
+    <section id="reviews" class="reviews section">
+        <div class="container">
+            <div class="reviews-header">
+                <div class="reviews-title-section">
+                    <div class="section-label">
+                        <span class="diamond-icon">◆</span>
+                        <span>Review</span>
+                    </div>
+                    <h2 class="section-title">ユーザーの声</h2>
+                    <p class="section-description">
+                        Layermateを活用してデザインワークフローを効率化している実際のユーザーの声をご紹介します。
+                    </p>
+                </div>
+                <div class="reviews-controls">
+                    <button class="review-nav-btn prev-btn" id="reviewPrev">
+                        <img src="Assets/Icon/Arrow_Back.svg" alt="前へ">
+                    </button>
+                    <button class="review-nav-btn next-btn" id="reviewNext">
+                        <img src="Assets/Icon/Arrow_Forward.svg" alt="次へ">
+                    </button>
+                    <div class="review-indicator">
+                        <div class="indicator-line">
+                            <div class="indicator-active" id="indicatorActive"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-carousel">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <p class="review-text">
+                            会話でデザイン作成できるのが革命的。イメージが曖昧な状態でも話しかけるだけでデザインが形になります。クライアントの要望をそのまま伝えて、すぐにビジュアル化できるのが本当に便利です。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-1"></div>
+                            <div class="author-info">
+                                <div class="author-name">Watanabe Yui</div>
+                                <div class="author-title">Webデザイナー</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">
+                            アイコン自動選択機能に感動しました。数百種類から最適なアイコンをAIが選んでくれるので、アイコン探しの時間が完全になくなりました。デザインの統一感も自然に保たれています。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-2"></div>
+                            <div class="author-info">
+                                <div class="author-name">Kobayashi Kotone</div>
+                                <div class="author-title">Webデザイナー</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">
+                            会話ベースでUIコンポーネントを作れるのが画期的。ボタンやカードの仕様を説明するだけで、即座にデザインが生成されます。イテレーションのスピードが格段に上がりました。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-3"></div>
+                            <div class="author-info">
+                                <div class="author-name">Tanaka Shota</div>
+                                <div class="author-title">プロダクトマネージャー</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">
+                            既存のデザインスタイルを理解して新しい要素を作ってくれる機能が便利すぎます。ランディングページの追加セクションもブランドの雰囲気を保ったまま作れるので、制作時間が半分以下になりました。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-4"></div>
+                            <div class="author-info">
+                                <div class="author-name">Nakamura Hinata</div>
+                                <div class="author-title">エンジニア</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">
+                            既存デザインを参考にできる機能が秀逸。Figmaのレイヤーを選択するだけで、統一感のある新しい要素を作ってくれます。デザインシステムの拡張がこんなに楽になるとは思いませんでした。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-5"></div>
+                            <div class="author-info">
+                                <div class="author-name">Hayashi Kento</div>
+                                <div class="author-title">Webデザイナー</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <p class="review-text">
+                            生成されたデザインがFigmaのレイヤーとして配置されるので、そのまま編集できるのが最高。チームメンバーがすぐに調整に入れるため、制作フローが途切れません。
+                        </p>
+                        <div class="review-author">
+                            <div class="author-avatar avatar-6"></div>
+                            <div class="author-info">
+                                <div class="author-name">Inoue Sakura</div>
+                                <div class="author-title">Webデザイナー</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-footer">
+                <div class="container">
+                    <div class="reviews-footer-content">
+                        <div class="reviews-footer-text">
+                            <h2 class="reviews-footer-title">改善点やご要望があれば、お気軽にご連絡ください</h2>
+                            <p class="reviews-footer-description">いただいたフィードバックは随時反映していきます。</p>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-large">
+                            フィードバックを送る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQセクション -->
+    <section id="faq" class="faq section">
+        <div class="container">
+            <div class="faq-wrapper">
+                <div class="section-label">
+                    <span class="diamond-icon">◆</span>
+                    <span>FAQ</span>
+                </div>
+                <h2 class="section-title">よくある質問</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>既存のFigmaファイルに影響はありますか?</span>
+                            <button class="faq-toggle">
+                                <img src="Assets/Icon/Plus.svg" alt="開く" class="faq-icon">
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>いいえ、既存のFigmaファイルには一切影響しません。Layermateは新しいレイヤーとしてデザインを生成するため、既存のデザインを保護します。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>Layermateはどうやって使えますか?</span>
+                            <button class="faq-toggle">
+                                <img src="Assets/Icon/Close.svg" alt="閉じる" class="faq-icon">
+                            </button>
+                        </div>
+                        <div class="faq-answer show">
+                            <p>FigmaのプラグインストアからLayermateをインストールするだけで始められます。インストール後、Figma上でプラグインを起動し、作りたいデザインを日本語で話しかけてください。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>デザインシステムのコンポーネントをサポートする予定はありますか?</span>
+                            <button class="faq-toggle">
+                                <img src="Assets/Icon/Plus.svg" alt="開く" class="faq-icon">
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、デザインシステムのコンポーネントサポートを開発中です。今後リリース予定です。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>日本語でも会話できますか?</span>
+                            <button class="faq-toggle">
+                                <img src="Assets/Icon/Plus.svg" alt="開く" class="faq-icon">
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、Layermateは日本語での会話を完全にサポートしています。自然な日本語でデザインの要望を伝えることができます。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>セキュリティは大丈夫ですか?</span>
+                            <button class="faq-toggle">
+                                <img src="Assets/Icon/Plus.svg" alt="開く" class="faq-icon">
+                            </button>
+                        </div>
+                        <div class="faq-answer">
+                            <p>はい、セキュリティを最優先に設計されています。すべてのデータは暗号化され、安全に処理されます。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金プラン -->
+    <section id="pricing" class="pricing section">
+        <div class="container">
+            <div class="section-label">
+                <span class="diamond-icon">◆</span>
+                <span>Price plan</span>
+            </div>
+            <h2 class="section-title">料金プラン</h2>
+            <p class="section-description">
+                あなたのニーズに合わせた最適なプランで、AIデザイン制作を始めましょう
+            </p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-plan-name">Basic</h3>
+                    <p class="pricing-plan-subtitle">個人利用に最適</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$0</span>
+                    </div>
+                    <p class="pricing-note">カード登録不要</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>1日5メッセージ</span>
+                        </li>
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>標準的な長さのレスポンス</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">このプランで始める</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3 class="pricing-plan-name">Pro</h3>
+                    <p class="pricing-plan-subtitle">最もオススメ</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$20</span>
+                        <span class="price-period">/月</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>月間1,000,000 トークン</span>
+                        </li>
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>長く詳細なレスポンス</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">このプランで始める</a>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-plan-name">Boost Pack</h3>
+                    <p class="pricing-plan-subtitle">Proプラン限定オプション</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$10</span>
+                    </div>
+                    <p class="pricing-note">都度購入</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>500,000追加トークン</span>
+                        </li>
+                        <li>
+                            <img src="Assets/Icon/Check.svg" alt="チェック">
+                            <span>Proプランで2ヶ月間ご利用可能</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- イベントセクション -->
+    <section id="events" class="events section">
+        <div class="container">
+            <div class="section-label">
+                <span class="diamond-icon">◆</span>
+                <span>Events</span>
+            </div>
+            <h2 class="section-title">イベント</h2>
+            <div class="events-list">
+                <article class="event-item">
+                    <div class="event-image">
+                        <img src="Assets/Event01.png" alt="イベント1">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Layermateを活用したデザイン改善のコツと成功事例</h3>
+                        <p class="event-date">2025年12月10日(水)20:00開始</p>
+                        <p class="event-location">会場: ONLINE</p>
+                        <a href="#" class="event-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+                <article class="event-item">
+                    <div class="event-image">
+                        <img src="Assets/Event02.png" alt="イベント2">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Layermateの効果的な使い方講座</h3>
+                        <p class="event-date">2025年11月17日(月)20:00開始</p>
+                        <p class="event-location">会場: ONLINE</p>
+                        <a href="#" class="event-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+                <article class="event-item">
+                    <div class="event-image">
+                        <img src="Assets/Event03.png" alt="イベント3">
+                    </div>
+                    <div class="event-content">
+                        <h3 class="event-title">Layermate ユーザーミートアップ vol.1~デザイン×AIの未来をユーザーと共に描く~</h3>
+                        <p class="event-date">2025年10月17日(金)19:00開始</p>
+                        <p class="event-location">会場：渋谷桜丘 第一東和ビル 2F</p>
+                        <a href="#" class="event-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ブログセクション -->
+    <section id="blog" class="blog section">
+        <div class="container">
+            <div class="section-label">
+                <span class="diamond-icon">◆</span>
+                <span>Blog</span>
+            </div>
+            <h2 class="section-title">ブログ</h2>
+            <div class="blog-list">
+                <article class="blog-item">
+                    <div class="blog-image">
+                        <img src="Assets/Blog01.png" alt="ブログ記事1">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">バイブコーディングによるLayermateの開発プロセスについて解説</h3>
+                        <p class="blog-date">2025年11月18日(火)</p>
+                        <a href="#" class="blog-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+                <article class="blog-item">
+                    <div class="blog-image">
+                        <img src="Assets/Blog02.png" alt="ブログ記事2">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">【プロンプト公開】 AIデザインツール 「Layermate」の特長を紹介</h3>
+                        <p class="blog-date">2025年11月13日(木)</p>
+                        <a href="#" class="blog-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+                <article class="blog-item">
+                    <div class="blog-image">
+                        <img src="Assets/Blog03.png" alt="ブログ記事3">
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-title">Layermateのサービスサイトのリニューアルの裏側</h3>
+                        <p class="blog-date">2025年10月31日(金)</p>
+                        <a href="#" class="blog-link">
+                            詳しく見る
+                            <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section id="contact" class="cta section">
+        <div class="cta-background">
+            <img src="Assets/Cta.png" alt="CTA Background" class="cta-bg-image">
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-logo">
+                    <img src="Assets/Logo_Color.png" alt="Layermate" class="cta-logo-img">
+                </div>
+                <h2 class="cta-title">今すぐLayermateを始めましょう</h2>
+                <p class="cta-description">会話するだけでFigmaのデザインが完成します。今すぐデザインの作り方を変えてみませんか？</p>
+                    <a href="#" class="btn btn-primary btn-large">
+                        Figmaで試す
+                        <img src="Assets/Icon/Arrow_Right_Up.svg" alt="矢印" class="arrow-icon">
+                    </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo-container">
+                        <img src="Assets/Logo_White.png" alt="Layermate" class="footer-logo">
+                    </div>
+                    <p class="footer-description">AIとの会話でFigmaキャンバスに直接生成するFigmaプラグイン</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="X（旧Twitter）">
+                        <img src="Assets/Icon/Logo_X.svg" alt="X">
+                    </a>
+                    <a href="#" aria-label="Note">
+                        <img src="Assets/Icon/Logo_note.svg" alt="Note">
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">プロダクト</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">Figmaプラグイン</a></li>
+                            <li><a href="#features">機能</a></li>
+                            <li><a href="#pricing">料金プラン</a></li>
+                            <li><a href="#">サポート</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">法的情報</h4>
+                        <ul class="footer-list">
+                            <li><a href="#">会社概要</a></li>
+                            <li><a href="#">利用規約</a></li>
+                            <li><a href="#">プライバシー</a></li>
+                            <li><a href="#">特定商取引法</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2025 XXXX Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
