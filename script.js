@@ -70,7 +70,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // アニメーション対象の要素を監視
-const animateElements = document.querySelectorAll('.feature-card, .blog-card, .event-card, .review-card, .pricing-card, .faq-item');
+const animateElements = document.querySelectorAll('.feature-card, .blog-card, .event-card, .review-card, .pricing-card, .faq-item, .feature-content, .more-feature-card, .event-item, .blog-item');
 animateElements.forEach(el => {
     observer.observe(el);
 });
@@ -191,32 +191,66 @@ const indicatorActive = document.getElementById('indicatorActive');
 let currentReviewIndex = 0;
 const reviewCards = document.querySelectorAll('.review-card');
 const totalReviews = reviewCards.length;
+const visibleCards = 4; // 一度に表示されるカード数
 
-if (reviewsTrack && reviewPrev && reviewNext) {
+if (reviewsTrack && reviewPrev && reviewNext && indicatorActive) {
     const updateReviewPosition = () => {
-        const cardWidth = reviewCards[0].offsetWidth + 20; // カード幅 + gap
-        reviewsTrack.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        reviewsTrack.style.transform = `translateX(-${currentReviewIndex * cardWidth}px)`;
+        if (reviewCards.length === 0) return;
         
-        // インジケーター更新
-        const indicatorWidth = 100 / totalReviews;
-        indicatorActive.style.transition = 'all 0.3s ease';
+        const cardWidth = reviewCards[0].offsetWidth;
+        const gap = 20; // gap between cards
+        const totalCardWidth = cardWidth + gap;
+        
+        // スライド位置を計算（4枚ずつ表示）
+        const maxIndex = Math.max(0, totalReviews - visibleCards);
+        const clampedIndex = Math.min(currentReviewIndex, maxIndex);
+        
+        reviewsTrack.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+        reviewsTrack.style.transform = `translateX(-${clampedIndex * totalCardWidth}px)`;
+        
+        // インジケーター更新（4つのカードグループごとに25%ずつ移動）
+        const indicatorWidth = 100 / visibleCards; // 25%
+        indicatorActive.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         indicatorActive.style.width = `${indicatorWidth}%`;
-        indicatorActive.style.left = `${currentReviewIndex * indicatorWidth}%`;
+        indicatorActive.style.left = `${(clampedIndex % visibleCards) * indicatorWidth}%`;
+        
+        // ボタンの有効/無効状態を更新
+        if (reviewPrev) {
+            reviewPrev.style.opacity = clampedIndex === 0 ? '0.4' : '1';
+            reviewPrev.style.cursor = clampedIndex === 0 ? 'not-allowed' : 'pointer';
+        }
+        if (reviewNext) {
+            reviewNext.style.opacity = clampedIndex >= maxIndex ? '0.4' : '1';
+            reviewNext.style.cursor = clampedIndex >= maxIndex ? 'not-allowed' : 'pointer';
+        }
     };
 
-    reviewNext.addEventListener('click', () => {
-        if (currentReviewIndex < totalReviews - 1) {
-            currentReviewIndex++;
-            updateReviewPosition();
-        }
-    });
+    if (reviewNext) {
+        reviewNext.addEventListener('click', () => {
+            const maxIndex = Math.max(0, totalReviews - visibleCards);
+            if (currentReviewIndex < maxIndex) {
+                currentReviewIndex++;
+                updateReviewPosition();
+            }
+        });
+    }
 
-    reviewPrev.addEventListener('click', () => {
-        if (currentReviewIndex > 0) {
-            currentReviewIndex--;
+    if (reviewPrev) {
+        reviewPrev.addEventListener('click', () => {
+            if (currentReviewIndex > 0) {
+                currentReviewIndex--;
+                updateReviewPosition();
+            }
+        });
+    }
+
+    // ウィンドウリサイズ時に再計算
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
             updateReviewPosition();
-        }
+        }, 250);
     });
 
     // 初期化
