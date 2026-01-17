@@ -191,28 +191,36 @@ const indicatorActive = document.getElementById('indicatorActive');
 let currentReviewIndex = 0;
 const reviewCards = document.querySelectorAll('.review-card');
 const totalReviews = reviewCards.length;
-const visibleCards = 4; // 一度に表示されるカード数
 
 if (reviewsTrack && reviewPrev && reviewNext && indicatorActive) {
+    const getVisibleCards = () => {
+        // 画面幅に応じて表示カード数を決定
+        if (window.innerWidth <= 768) {
+            return 1; // SP版では1枚ずつ表示
+        }
+        return 4; // PC版では4枚表示
+    };
+
     const updateReviewPosition = () => {
         if (reviewCards.length === 0) return;
         
+        const visibleCards = getVisibleCards();
         const cardWidth = reviewCards[0].offsetWidth;
         const gap = 20; // gap between cards
         const totalCardWidth = cardWidth + gap;
         
-        // スライド位置を計算（4枚ずつ表示）
+        // スライド位置を計算
         const maxIndex = Math.max(0, totalReviews - visibleCards);
         const clampedIndex = Math.min(currentReviewIndex, maxIndex);
         
         reviewsTrack.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         reviewsTrack.style.transform = `translateX(-${clampedIndex * totalCardWidth}px)`;
         
-        // インジケーター更新（4つのカードグループごとに25%ずつ移動）
-        const indicatorWidth = 100 / visibleCards; // 25%
+        // インジケーター更新
+        const indicatorWidth = 100 / totalReviews;
         indicatorActive.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         indicatorActive.style.width = `${indicatorWidth}%`;
-        indicatorActive.style.left = `${(clampedIndex % visibleCards) * indicatorWidth}%`;
+        indicatorActive.style.left = `${clampedIndex * indicatorWidth}%`;
         
         // ボタンの有効/無効状態を更新
         if (reviewPrev) {
@@ -227,6 +235,7 @@ if (reviewsTrack && reviewPrev && reviewNext && indicatorActive) {
 
     if (reviewNext) {
         reviewNext.addEventListener('click', () => {
+            const visibleCards = getVisibleCards();
             const maxIndex = Math.max(0, totalReviews - visibleCards);
             if (currentReviewIndex < maxIndex) {
                 currentReviewIndex++;
@@ -249,6 +258,7 @@ if (reviewsTrack && reviewPrev && reviewNext && indicatorActive) {
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
+            currentReviewIndex = 0; // リサイズ時に最初に戻す
             updateReviewPosition();
         }, 250);
     });
